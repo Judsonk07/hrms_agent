@@ -141,7 +141,7 @@ SIMPLE_JWT = {
 # CORS Configuration
 CORS_ALLOWED_ORIGINS = config(
     'CORS_ALLOWED_ORIGINS',
-    default='http://localhost:3000,http://localhost:5173,https://agent-website-ruby.vercel.app'
+    default='http://localhost:3000,http://localhost:5173,https://hrms-agent.vercel.app'
 ).split(',')
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_HEADERS = [
