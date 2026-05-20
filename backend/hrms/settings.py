@@ -12,7 +12,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 import os
 SECRET_KEY = config('SECRET_KEY', default='django-insecure-fallback-key')
 DEBUG = config('DEBUG', default=True, cast=bool)
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1').split(',')
+ALLOWED_HOSTS = [host.strip() for host in config('ALLOWED_HOSTS', default='localhost,127.0.0.1,agent-website-yuuo.onrender.com,*.onrender.com').split(',') if host.strip()]
+if DEBUG:
+    ALLOWED_HOSTS = ['*']
 
 # AI Integration
 GEMINI_API_KEY = config('GEMINI_API_KEY', default='')
