@@ -1,9 +1,7 @@
 // Axios instance with JWT auth interceptors
 import axios from 'axios';
 
-const API_URL = import.meta.env.DEV 
-  ? 'http://localhost:8000/api'
-  : (import.meta.env.VITE_API_URL || 'https://hrms-agent.onrender.com/api');
+const API_URL = import.meta.env.VITE_API_URL || 'https://hrms-agent.onrender.com/api';
 
 const api = axios.create({
   baseURL: API_URL,
