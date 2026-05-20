@@ -75,12 +75,16 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'hrms.wsgi.application'
 
-# Database - PostgreSQL
-import dj_database_url
+# Database - PostgreSQL (uses individual DB_* env vars, ignores DATABASE_URL)
 DATABASES = {
-    'default': dj_database_url.config(
-        default=f"postgres://{config('DB_USER', default='postgres.wzumsctmzwjbqwxfcain')}:{config('DB_PASSWORD', default='jJhW5428lS5hLiwp')}@{config('DB_HOST', default='aws-1-ap-south-1.pooler.supabase.com')}:{config('DB_PORT', default='5432')}/{config('DB_NAME', default='hrms')}"
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': config('DB_NAME', default='postgres'),
+        'USER': config('DB_USER', default='postgres.wzumsctmzwjbqwxfcain'),
+        'PASSWORD': config('DB_PASSWORD', default='jJhW5428lS5hLiwp'),
+        'HOST': config('DB_HOST', default='aws-1-ap-south-1.pooler.supabase.com'),
+        'PORT': config('DB_PORT', default='5432'),
+    }
 }
 
 # Custom User Model
