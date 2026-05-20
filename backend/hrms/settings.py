@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'hrms.wsgi.application'
 import dj_database_url
 DATABASES = {
     'default': dj_database_url.config(
-        default=f"postgres://{config('DB_USER', default='postgres')}:{config('DB_PASSWORD', default='Judson@07')}@{config('DB_HOST', default='localhost')}:{config('DB_PORT', default='5432')}/{config('DB_NAME', default='hrms_db')}"
+        default=f"postgres://{config('DB_USER', default='postgres.wzumsctmzwjbqwxfcain')}:{config('DB_PASSWORD', default='jJhW5428lS5hLiwp')}@{config('DB_HOST', default='aws-1-ap-south-1.pooler.supabase.com')}:{config('DB_PORT', default='5432')}/{config('DB_NAME', default='hrms')}"
     )
 }
 
